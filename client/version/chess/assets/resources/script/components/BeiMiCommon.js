@@ -156,8 +156,10 @@ cc.Class({
         cc.beimi.context = context ;
     },
     cleanpvalistener:function(){
-        cc.beimi.listener = null ;
-        cc.beimi.context = null ;
+        if (cc && cc.beimi) {
+            cc.beimi.listener = null ;
+            cc.beimi.context = null ;
+        }
     },
     pva:function(pvatype , balance){   //客户端资产变更（仅显示，多个地方都会调用 pva方法）
         if(pvatype != null){
